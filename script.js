@@ -3,6 +3,8 @@
  * Keeps a score of player and computer in all rounds.
  * 
  * @return {string} returns the score and winner of the game
+ * @todo create helper functions to that determines the winner
+ * @todo create helper functions that handles multiple rounds
  */
 function game() {
   let playerScore = 0, computerScore = 0;
@@ -31,6 +33,9 @@ function game() {
  * @param {string} playerSelection a choice of hand to play, not case sensitive
  * @param {string} computerSelection computer generated choice of hand to play
  * @return {string} returns a string that says wether or not the player wins
+ * 
+ * @todo change the return value for each case
+ * @todo alert or log to console the result of round
  */
 function playRound(playerSelection, computerSelection) {
   // capitalize player input
