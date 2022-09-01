@@ -4,7 +4,7 @@
  * @return {string} either "Rock", "Paper", or "Scissors"
  */
 function getComputerChoice() {
-  let num = randomNumber();
+  const num = randomNumber();
 
   if(num == 1) return "Rock";
   if (num == 2) return "Paper";
