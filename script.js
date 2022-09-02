@@ -3,13 +3,12 @@
  * Keeps a score of player and computer in all rounds.
  * 
  * @return {string} returns the score and winner of the game
- * @todo create helper functions to that determines the winner
  * @todo create helper functions that handles multiple rounds
  */
 function game() {
   let playerScore = 0, computerScore = 0;
 
-  const numOfRounds = +prompt("For how many rounds do you want to play?", 1);
+  let numOfRounds = +prompt("For how many rounds do you want to play?", 1);
 
   for(let i = 0; i < numOfRounds; i++) {
     let playerChoice = prompt("Enter the choice of hand you want to play");
