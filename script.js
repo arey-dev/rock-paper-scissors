@@ -20,6 +20,16 @@ function game() {
     console.log(roundResult);
   }
 
+  announceWinner(playerScore, computerScore);
+}
+
+/**
+ * Announces the winner of the game
+ * 
+ * @param {number} playerScore score of the player
+ * @param {number} computerScore score of the computer
+ */
+function announceWinner(playerScore, computerScore) {
   console.log(`Game ends! Final scores are, Player: ${playerScore} Computer: ${computerScore}`);
 
   if(playerScore > computerScore) console.log("Player Wins");
