@@ -17,11 +17,13 @@ buttons.forEach(button => {
     const rndResult = playRound(playerChoice, getComputerChoice());
     div.innerHTML = '<h4>' + rndResult + '</h4>';
 
+    // add 1 score if the player wins
     if(rndResult.includes('Win')) {
       playerScore++;
       spanP.textContent = playerScore;
     }
 
+    // add 1 score if the computer wins
     if(rndResult.includes('Lose')) {
       computerScore++;
       spanC.textContent = computerScore;
@@ -32,22 +34,23 @@ buttons.forEach(button => {
 });
 
 /**
- * Performs mulitple rounds of Rock Paper Scissors base on user input
- * Keeps a score of player and computer in all rounds.
- * 
- * @return {string} returns the score and winner of the game
- * @todo create helper functions that handles multiple rounds
+ * Displays the winner of the game
+ * once a player reachers a score of 5
  */
 function game() {
   if(playerScore == 5 || computerScore == 5) {
     const winner = (playerScore == 5) ? 'Player Wins' : 'Computer Wins';
 
+    // show the winner through DOM
     const divWin = document.querySelector('.result');
     const elem = document.createElement('h2');
     elem.textContent = `Game ends! ${winner}`;
     divWin.prepend(elem);
 
+    // reset socores
     spanC.textContent = spanP.textContent = computerScore = playerScore = 0;
+
+    // remove announcement after a certain time
     setTimeout(() => divWin.firstElementChild.remove(), 2000);
   }
 }
