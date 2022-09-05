@@ -1,10 +1,15 @@
 const buttons = document.querySelectorAll('[data-choice]');
 
-// add event listener to all buttons
+// add event listener to all buttons that
+// display results of playRound()
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    let choice = button.getAttribute('data-choice');
-    console.log(playRound(choice, getComputerChoice()));
+    const playerChoice = button.getAttribute('data-choice');
+    const div = document.querySelector('.round');
+
+    // get result of playRound()
+    const rndResult = playRound(playerChoice, getComputerChoice());
+    div.innerHTML = '<h4>' + rndResult + '</h4>';
   });
 });
 
