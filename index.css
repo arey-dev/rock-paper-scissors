@@ -14,7 +14,7 @@ body {
   margin-inline: auto;
 }
 
-.button, .result{
+.button, .score {
   display: flex;
   justify-content: center;
   gap: 20px;
