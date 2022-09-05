@@ -1,14 +1,25 @@
+body {
+  padding-top: 100px;
+}
+
+* {
+  margin: 0;
+}
+
 .container {
   max-width: 800px;
   width: 100%;
   padding: 10px;
   text-align: center;
   margin-inline: auto;
-  margin-bottom: 20px;
 }
 
-.button {
+.button, .result{
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.result {
+  gap: 50px;
 }
