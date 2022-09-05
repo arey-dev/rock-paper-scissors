@@ -1,4 +1,10 @@
 const buttons = document.querySelectorAll('[data-choice]');
+const spanP = document.querySelector('[data-score="player"]');
+const spanC = document.querySelector('[data-score="computer"]');
+const score = document.querySelector('.score');
+
+let playerScore = 0;
+let computerScore = 0;
 
 // add event listener to all buttons that
 // display results of playRound()
@@ -10,9 +16,20 @@ buttons.forEach(button => {
     // get result of playRound()
     const rndResult = playRound(playerChoice, getComputerChoice());
     div.innerHTML = '<h4>' + rndResult + '</h4>';
-  });
-});
 
+    if(rndResult.includes('Win')) {
+      playerScore++;
+      spanP.textContent = playerScore;
+    }
+
+    if(rndResult.includes('Lose')) {
+      computerScore++;
+      spanC.textContent = computerScore;
+    }
+  });
+
+  button.addEventListener('click', game);
+});
 
 /**
  * Performs mulitple rounds of Rock Paper Scissors base on user input
@@ -22,9 +39,17 @@ buttons.forEach(button => {
  * @todo create helper functions that handles multiple rounds
  */
 function game() {
-  let playerScore = 0, computerScore = 0;
+  if(playerScore == 5 || computerScore == 5) {
+    const winner = (playerScore == 5) ? 'Player Wins' : 'Computer Wins';
 
+    const divWin = document.querySelector('.result');
+    const elem = document.createElement('h2');
+    elem.textContent = `Game ends! ${winner}`;
+    divWin.prepend(elem);
 
+    spanC.textContent = spanP.textContent = computerScore = playerScore = 0;
+    setTimeout(() => divWin.firstElementChild.remove(), 2000);
+  }
 }
 
 /**
