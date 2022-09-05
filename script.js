@@ -1,3 +1,14 @@
+const buttons = document.querySelectorAll('[data-choice]');
+
+// add event listener to all buttons
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    let choice = button.getAttribute('data-choice');
+    console.log(playRound(choice, getComputerChoice()));
+  });
+});
+
+
 /**
  * Performs mulitple rounds of Rock Paper Scissors base on user input
  * Keeps a score of player and computer in all rounds.
