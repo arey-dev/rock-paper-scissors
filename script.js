@@ -8,17 +8,6 @@
 function game() {
   let playerScore = 0, computerScore = 0;
 
-  let numOfRounds = +prompt("For how many rounds do you want to play?", 1);
-
-  for(let i = 0; i < numOfRounds; i++) {
-    let playerChoice = prompt("Enter the choice of hand you want to play");
-    let roundResult = playRound(playerChoice, getComputerChoice());
-    if(roundResult.includes('Win')) playerScore++;
-    else if(roundResult.includes('Lose')) computerScore++;
-
-    console.log(roundResult);
-  }
-
   announceWinner(playerScore, computerScore);
 }
 
